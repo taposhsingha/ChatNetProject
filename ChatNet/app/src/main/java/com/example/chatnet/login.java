@@ -11,7 +11,15 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+class userlogin{
+    public static Boolean userlogin = false;
+}
+
+
 public class login extends AppCompatActivity {
+
+
+
 
     EditText username, password, confirmpassword;
     Button login, createaccount;
@@ -35,18 +43,22 @@ public class login extends AppCompatActivity {
                 String reg_password = password.getText().toString();
                 String repassword = confirmpassword.getText().toString();
 
-                if (loguser.equals("") || password.equals("")|| repassword.equals("")){
+                if (loguser.equals("") || reg_password.equals("")|| repassword.equals("")){
                     Toast.makeText(login.this,"Please input the fields", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    if (password.equals(repassword)) {
+                    if (reg_password.equals(repassword)) {
                         Boolean checkuser = DB.checkusername(loguser);
                         if (!checkuser) {
                             Toast.makeText(login.this, "Login failed",Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Intent loginIntent = new Intent(getApplicationContext(),MainActivity.class);
-                            startActivity(loginIntent);
+                            userlogin.userlogin = true;
+                            try{Intent loginIntent = new Intent(login.this,MainActivity.class);
+                            startActivity(loginIntent);}
+                            catch (Exception e){
+                                System.out.println("Exception login button");
+                            }
                         }
                     }
                 }
@@ -60,23 +72,37 @@ public class login extends AppCompatActivity {
                 String reg_password = password.getText().toString();
                 String repassword = confirmpassword.getText().toString();
 
-                if (reguser.equals("") || password.equals("")|| repassword.equals("")){
+                if (reguser.equals("") || reg_password.equals("")|| repassword.equals("")){
                     Toast.makeText(login.this,"Please input the fields", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    if (password.equals(repassword)) {
+                    if (reg_password.equals(repassword)) {
                         Boolean checkuser = DB.checkusername(reguser);
                         if (!checkuser) {
                             Boolean insert = DB.insertData(reguser, reg_password);
                             if (insert){
+                                userlogin.userlogin = true;
                                 Toast.makeText(login.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent regIntent = new Intent(getApplicationContext(),MainActivity.class);
+                                try{Intent regIntent = new Intent(login.this,MainActivity.class);
                                 startActivity(regIntent);
+                                } catch (Exception e){
+                                    System.out.println("Exception register");
+                                }
+
                             }
+                        } else {
+                            Toast.makeText(login.this,"registration failed",Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
             }
         });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this,"You cant go back",Toast.LENGTH_SHORT).show();
     }
 }

@@ -13,7 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="102dp"
-        android:layout_marginTop="424dp"
+        android:layout_marginTop="357dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_lock"
         android:ems="10"
@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="104dp"
-        android:layout_marginTop="367dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="314dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_lock"
         android:ems="10"
@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="486dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="398dp"
         android:background="@drawable/custom_button"
         android:text="Login" />
 
@@ -62,7 +62,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="106dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginTop="467dp"
         android:background="@drawable/custom_button"
         android:text="Create Account" />
 
@@ -73,7 +73,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="101dp"
-        android:layout_marginTop="309dp"
+        android:layout_marginTop="263dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/ic_person"
         android:ems="10"
