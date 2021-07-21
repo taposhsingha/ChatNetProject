@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     if (!myBluetoothAdapter.isEnabled()){
                         startActivityForResult(bluetoothEnableIntent,requestCodeForEnable);
+                        Intent sendIntent = new Intent(MainActivity.this,DeviceList.class);
+                        startActivity(sendIntent);
                     }
                 }
             }
