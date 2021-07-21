@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="67dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="51dp"
         android:background="@drawable/custom_button"
         android:text="Listen" />
 
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="242dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="51dp"
         android:background="@drawable/custom_button"
         android:text="List of devices" />
 
@@ -34,9 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="176dp"
+        android:layout_marginLeft="187dp"
         android:layout_marginTop="118dp"
-        android:text="TextView" />
+        android:text="Status" />
 
     <ListView
         android:id="@+id/listview"
@@ -53,9 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="436dp"
-        android:text="TextView" />
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="439dp" />
 
     <EditText
         android:id="@+id/writemsg"
@@ -80,12 +79,42 @@
         android:text="SEND" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/sentmessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="179dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="376dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="74dp"
         android:layout_marginTop="376dp"
-        android:text="TextView" />
+        android:text="Message sent:" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="437dp"
+        android:text="Message received:" />
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="291dp"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/custom_button"
+        android:text="Log out" />
 </RelativeLayout>

@@ -27,9 +27,9 @@ import java.util.UUID;
 
 public class DeviceList extends AppCompatActivity {
 
-    Button listen,send, listDevices;
+    Button listen,send, listDevices,signout;
     ListView listView;
-    TextView msg_box,status;
+    TextView msg_box,status,sentmessage;
     EditText writeMsg;
 
     BluetoothAdapter bluetoothAdapter;
@@ -60,6 +60,8 @@ public class DeviceList extends AppCompatActivity {
         status = (TextView) findViewById(R.id.status);
         writeMsg = (EditText) findViewById(R.id.writemsg);
         listDevices = (Button) findViewById(R.id.listDevices);
+        sentmessage = (TextView) findViewById(R.id.sentmessage);
+        signout = (Button) findViewById(R.id.signout);
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -114,8 +116,17 @@ public class DeviceList extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sentmessage.setText(writeMsg.getText().toString());
                 String string = String.valueOf(writeMsg.getText());
                 sendReceive.write(string.getBytes());
+            }
+        });
+
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logoutintent = new Intent(DeviceList.this,login.class);
+                startActivity(logoutintent);
             }
         });
     }
