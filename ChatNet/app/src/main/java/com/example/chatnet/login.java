@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 class userlogin{
     public static Boolean userlogin = false;
+    public static String username = "";
 }
 
 
@@ -54,6 +55,7 @@ public class login extends AppCompatActivity {
                         }
                         else {
                             userlogin.userlogin = true;
+                            userlogin.username = loguser;
                             try{Intent loginIntent = new Intent(login.this,MainActivity.class);
                             startActivity(loginIntent);}
                             catch (Exception e){

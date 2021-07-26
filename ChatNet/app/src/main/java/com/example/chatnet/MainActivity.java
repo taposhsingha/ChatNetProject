@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button enablebluetooth, signout;
     BluetoothAdapter myBluetoothAdapter;
+    TextView welcomeText;
 
     Intent bluetoothEnableIntent;
     int requestCodeForEnable;
@@ -25,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
         enablebluetooth = (Button) findViewById(R.id.enablebluetooth);
         signout = (Button) findViewById(R.id.signout);
+        welcomeText = (TextView) findViewById(R.id.welcometext);
         myBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         bluetoothEnableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         requestCodeForEnable = 1;
         enablebluetooth();
         signout();
+        welcomeText.setText("Welcome "+ userlogin.username);
     }
 
     @Override
